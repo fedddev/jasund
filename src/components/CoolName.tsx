@@ -1,10 +1,10 @@
-import { useEffect, useState, FC, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Center, Text3D } from "@react-three/drei";
 import { useStore } from "../stores/useStore";
-import { Box3, MathUtils, Vector3 } from "three";
+import { Box3, Mesh, Vector3 } from "three";
 
 export const CoolName = () => {
-  const textRef = useRef();
+  const textRef = useRef<Mesh>(null);
   const startingZ = -30;
   const name = useStore((state) => state.name);
   const [centerX, setCenterX] = useState<number>(0);
